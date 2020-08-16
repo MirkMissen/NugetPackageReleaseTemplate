@@ -3,11 +3,22 @@ name: Master commit.
 on:
   push:
     branches: [ master ]
-    
+
 jobs:
-  test:
-    name: Unit Testing
-    runs-on: windows-latest
+  Test:
+    name: build, test and release on new version.
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2.1.0
-      - run: dotnet test Calculator/Calculator.sln
+        
+      - name: Unit tests
+        run: dotnet test Calculator/Calculator.sln
+        
+      - name: publish on version change
+        id: publish_nuget
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: Calculator/Calculator/Calculator.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+   
