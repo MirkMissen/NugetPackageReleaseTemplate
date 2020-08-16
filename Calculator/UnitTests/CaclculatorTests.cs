@@ -5,9 +5,15 @@ namespace UnitTests {
     public class CaclculatorTests {
 
         [TestMethod]
-        public void TestMethod1() {
+        public void SuccessTest() {
             var calculator = new Calculator.Calculator();
             Assert.IsTrue(calculator.Add(2, 2) == 4);
+        }
+
+        [TestMethod]
+        public void FailingTest() {
+            var calculator = new Calculator.Calculator();
+            Assert.IsTrue(calculator.Add(2, 2) == 5);
         }
 
     }
