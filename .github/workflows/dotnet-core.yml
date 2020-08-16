@@ -5,21 +5,15 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  publish:
+    name: build, pack & publish
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.101
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Publish FluentEmail.Core
-      uses: brandedoutcast/publish-nuget@v2.5.2
-      with:
-          PROJECT_FILE_PATH: src/FluentEmail.Core/FluentEmail.Core.csproj
+      - uses: actions/checkout@v2
+      - name: publish on version change
+        id: publish_nuget
+        uses: rohith/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: Calculator/Calculator/Calculator.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
