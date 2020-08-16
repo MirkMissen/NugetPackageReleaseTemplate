@@ -1618,7 +1618,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "MirkTestCalculator/1.0.3": {
+      "MirkTestCalculator/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "compile": {
@@ -5821,7 +5821,7 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "MirkTestCalculator/1.0.3": {
+    "MirkTestCalculator/1.0.2": {
       "type": "project",
       "path": "../Calculator/Calculator.csproj",
       "msbuildProject": "../Calculator/Calculator.csproj"
@@ -5833,7 +5833,7 @@
       "MSTest.TestFramework >= 1.3.2",
       "Microsoft.NET.Test.Sdk >= 15.9.0",
       "Microsoft.NETCore.App >= 2.1.0",
-      "MirkTestCalculator >= 1.0.3"
+      "MirkTestCalculator >= 1.0.2"
     ]
   },
   "packageFolders": {
