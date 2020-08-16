@@ -11,6 +11,7 @@ namespace UnitTests {
         }
 
         [TestMethod]
+        [Ignore("Must fail; testing that CI can catch it.")]
         public void FailingTest() {
             var calculator = new Calculator.Calculator();
             Assert.IsTrue(calculator.Add(2, 2) == 5);
